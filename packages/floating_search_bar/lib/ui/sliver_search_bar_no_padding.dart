@@ -172,7 +172,7 @@ class _SliverFloatingBarNoPaddingState extends State<SliverFloatingBarNoPadding>
   }
 
   @override
-  void didUpdateWidget(SliverFloatingBar oldWidget) {
+  void didUpdateWidget(SliverFloatingBarNoPadding oldWidget) {
     super.didUpdateWidget(oldWidget);
     if (widget.snap != oldWidget.snap || widget.floating != oldWidget.floating)
       _updateSnapConfiguration();
