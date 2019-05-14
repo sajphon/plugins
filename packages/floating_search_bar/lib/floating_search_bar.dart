@@ -15,6 +15,7 @@ class FloatingSearchBar extends StatelessWidget {
     this.title,
     this.decoration,
     this.onTap,
+    this.baseStyle,
     @required List<Widget> children,
   }) : _childDelagate = SliverChildListDelegate(
           children,
@@ -31,6 +32,7 @@ class FloatingSearchBar extends StatelessWidget {
     this.title,
     this.onTap,
     this.decoration,
+    this.baseStyle,
     @required IndexedWidgetBuilder itemBuilder,
     @required int itemCount,
   }) : _childDelagate = SliverChildBuilderDelegate(
@@ -47,6 +49,7 @@ class FloatingSearchBar extends StatelessWidget {
   final ValueChanged<String> onChanged;
 
   final InputDecoration decoration;
+  final TextStyle baseStyle;
 
   final VoidCallback onTap;
 
@@ -65,10 +68,10 @@ class FloatingSearchBar extends StatelessWidget {
             leading: leading,
             floating: true,
             backgroundColor: Colors.transparent,
-
             title: title ??
                 TextField(
                   controller: controller,
+                  style: baseStyle,
                   decoration: decoration ??
                       InputDecoration.collapsed(
                         hintText: "Search...",
