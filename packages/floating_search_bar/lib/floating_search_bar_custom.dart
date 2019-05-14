@@ -4,7 +4,7 @@ import 'ui/sliver_search_bar.dart';
 export 'ui/sliver_search_bar.dart';
 
 class FloatingSearchBarCustom extends StatelessWidget {
-  FloatingSearchBar({
+  FloatingSearchBarCustom({
     this.body,
     this.drawer,
     this.trailing,
