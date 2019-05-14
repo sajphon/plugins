@@ -181,7 +181,7 @@ class _SliverFloatingBarNoPaddingState extends State<SliverFloatingBarNoPadding>
 
   @override
   Widget build(BuildContext context) {
-    final double topPadding = topPadding;
+    final double topPadding = widget.topPadding;
     final double collapsedHeight =
         (widget.pinned && widget.floating) ? topPadding : null;
 
