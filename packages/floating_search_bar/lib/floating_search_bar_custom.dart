@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import 'ui/sliver_search_bar.dart';
-export 'ui/sliver_search_bar.dart';
+import 'ui/sliver_search_bar_no_padding.dart';
+export 'ui/sliver_search_bar_no_padding.dart';
 
 class FloatingSearchBarCustom extends StatelessWidget {
   FloatingSearchBarCustom({
@@ -16,14 +16,9 @@ class FloatingSearchBarCustom extends StatelessWidget {
     this.decoration,
     this.onTap,
     this.baseStyle,
-    @required List<Widget> children,
-  }) : _childDelagate = SliverChildListDelegate(
-          children,
-        );
+  });
 
   final Widget leading, trailing, body, drawer, endDrawer;
-
-  final SliverChildDelegate _childDelagate;
 
   final TextEditingController controller;
 
@@ -39,9 +34,14 @@ class FloatingSearchBarCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CustomScrollView(
+    return Scaffold(
+      drawer: drawer,
+      endDrawer: endDrawer,
+      backgroundColor: Colors.transparent,
+      body: CustomScrollView(
+        shrinkWrap: false,
         slivers: <Widget>[
-        SliverFloatingBar(
+          SliverFloatingBarNoPadding(
             leading: leading,
             floating: true,
             backgroundColor: Colors.transparent,
@@ -58,6 +58,9 @@ class FloatingSearchBarCustom extends StatelessWidget {
                   onTap: onTap,
                 ),
             trailing: trailing,
-          )]);
+          )
+        ],
+      ),
+    );
   }
 }
