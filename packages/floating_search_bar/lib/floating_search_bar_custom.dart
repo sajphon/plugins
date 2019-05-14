@@ -39,7 +39,9 @@ class FloatingSearchBarCustom extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SliverFloatingBar(
+    return CustomScrollView(
+        slivers: <Widget>[
+        SliverFloatingBar(
             leading: leading,
             floating: true,
             backgroundColor: Colors.transparent,
@@ -56,6 +58,6 @@ class FloatingSearchBarCustom extends StatelessWidget {
                   onTap: onTap,
                 ),
             trailing: trailing,
-          );
+          )]);
   }
 }
