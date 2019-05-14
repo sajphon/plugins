@@ -63,6 +63,7 @@ class SliverFloatingBarNoPadding extends StatefulWidget {
   /// content is scrolled under it, or if it scrolls with the content, then no
   /// shadow is drawn, regardless of the value of [elevation].
   final double elevation;
+  final double topPadding;
 
   /// The color to use for the app bar's material. Typically this should be set
   /// along with [brightness], [iconTheme], [textTheme].
