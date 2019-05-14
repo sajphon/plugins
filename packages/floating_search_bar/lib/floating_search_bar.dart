@@ -58,11 +58,14 @@ class FloatingSearchBar extends StatelessWidget {
     return Scaffold(
       drawer: drawer,
       endDrawer: endDrawer,
+      backgroundColor: Colors.transparent,
       body: CustomScrollView(
         slivers: <Widget>[
           SliverFloatingBar(
             leading: leading,
             floating: true,
+            backgroundColor: Colors.transparent,
+
             title: title ??
                 TextField(
                   controller: controller,
